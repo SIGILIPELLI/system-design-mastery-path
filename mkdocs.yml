@@ -1,0 +1,113 @@
+site_name: System Design Mastery Path
+site_description: A structured, module-wise system design program — scaling, caching, replication, consensus, and full design exercises for building real systems and passing interviews.
+site_url: https://sigilipelli.github.io/system-design-mastery-path/
+repo_url: https://github.com/sigilipelli/system-design-mastery-path
+repo_name: system-design-mastery-path
+
+theme:
+  name: material
+  favicon: assets/favicon.svg
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/progress-tracker.css
+
+extra_javascript:
+  - javascripts/progress-tracker.js
+
+nav:
+  - Home: index.md
+  - Privacy Policy: privacy.md
+  - License: license.md
+  - "Level 1 · Entry":
+      - Overview: level-1/index.md
+      - "01 · What System Design Is & How to Approach It": level-1/01-what-is-system-design.md
+      - "02 · Client-Server & HTTP Basics": level-1/02-client-server-http.md
+      - "03 · Latency, Throughput & Back-of-Envelope Estimation": level-1/03-latency-throughput-estimation.md
+      - "04 · Vertical vs Horizontal Scaling": level-1/04-vertical-horizontal-scaling.md
+      - "05 · Load Balancing": level-1/05-load-balancing.md
+      - "06 · Caching Fundamentals": level-1/06-caching-fundamentals.md
+      - "07 · SQL vs NoSQL Basics": level-1/07-sql-vs-nosql.md
+      - "08 · CDNs & Edge Caching": level-1/08-cdns.md
+      - "09 · APIs: REST, gRPC & GraphQL": level-1/09-api-styles.md
+      - "10 · Project — Design a URL Shortener": level-1/10-project-url-shortener.md
+  - "Level 2 · Intermediate":
+      - Overview: level-2/index.md
+      - "01 · Replication": level-2/01-replication.md
+      - "02 · Sharding & Partitioning": level-2/02-sharding-partitioning.md
+      - "03 · Consistent Hashing": level-2/03-consistent-hashing.md
+      - "04 · CAP & PACELC, With Nuance": level-2/04-cap-pacelc.md
+      - "05 · Message Queues & Async Processing": level-2/05-message-queues.md
+      - "06 · Rate Limiting Algorithms": level-2/06-rate-limiting.md
+      - "07 · Indexing & Query Patterns": level-2/07-indexing-query-patterns.md
+      - "08 · Cache Invalidation Strategies": level-2/08-cache-invalidation.md
+      - "09 · Blob & Object Storage": level-2/09-object-storage.md
+      - "10 · Project — Design a News Feed": level-2/10-project-news-feed.md
+  - "Level 3 · Advanced":
+      - Overview: level-3/index.md
+      - "01 · Consensus Basics: Raft Conceptually": level-3/01-consensus-raft.md
+      - "02 · Distributed Transactions & Sagas": level-3/02-distributed-transactions-sagas.md
+      - "03 · Idempotency & the Exactly-Once Myth": level-3/03-idempotency-exactly-once.md
+      - "04 · Event-Driven Architecture & CDC": level-3/04-event-driven-cdc.md
+      - "05 · Search Systems": level-3/05-search-systems.md
+      - "06 · Real-Time Systems: WebSockets & Pub/Sub": level-3/06-real-time-systems.md
+      - "07 · Observability": level-3/07-observability.md
+      - "08 · Reliability Patterns": level-3/08-reliability-patterns.md
+      - "09 · Hot Keys, Skew & Multi-Tenancy": level-3/09-multi-tenant-hot-keys.md
+      - "10 · Project — Design a Chat System": level-3/10-project-chat-system.md
+  - "Level 4 · Master":
+      - Overview: level-4/index.md
+      - "01 · Case Study: Video Streaming": level-4/01-case-video-streaming.md
+      - "02 · Case Study: Ride-Hailing Dispatch": level-4/02-case-ride-hailing.md
+      - "03 · Case Study: Distributed File Storage": level-4/03-case-distributed-file-storage.md
+      - "04 · Case Study: Payment System": level-4/04-case-payment-system.md
+      - "05 · Multi-Region & Disaster Recovery": level-4/05-multi-region-dr.md
+      - "06 · Cost-Aware Design": level-4/06-cost-aware-design.md
+      - "07 · Security Architecture": level-4/07-security-architecture.md
+      - "08 · The Interview Framework & Common Mistakes": level-4/08-interview-framework.md
+      - "09 · Writing Design Docs & Defending Trade-offs": level-4/09-design-reviews-tradeoffs.md
+      - "10 · Capstone — Your Own Design Doc": level-4/10-capstone-design-doc.md
