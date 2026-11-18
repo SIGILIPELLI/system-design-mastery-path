@@ -21,7 +21,7 @@ You are free to:
 
 **No permission needed, no fee, no login required.** The only condition is
 attribution — credit "System Design Mastery Path" (or the wider [Mastery Path
-series](https://sigilipelli.github.io/system-design-mastery-path/)) and link back to the
+series](https://learnmasterypath.com/system-design-mastery-path/)) and link back to the
 original page.
 
 ## Code snippets
