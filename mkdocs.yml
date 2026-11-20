@@ -6,6 +6,7 @@ repo_name: system-design-mastery-path
 
 theme:
   name: material
+  font: false
   favicon: assets/favicon.svg
   custom_dir: docs/overrides
   palette:
@@ -24,6 +25,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
+    - navigation.path
     - navigation.tabs
     - navigation.sections
     - navigation.expand
@@ -58,6 +60,14 @@ extra_css:
 
 extra_javascript:
   - javascripts/progress-tracker.js
+
+
+
+
+extra:
+  related:
+    - name: "DSA & Coding Interviews"
+      url: https://learnmasterypath.com/dsa-interview-mastery-path/
 
 nav:
   - Home: index.md
