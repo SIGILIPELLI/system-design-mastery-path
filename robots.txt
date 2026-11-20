@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://learnmasterypath.com/system-design-mastery-path/sitemap.xml
