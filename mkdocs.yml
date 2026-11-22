@@ -57,9 +57,11 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/progress-tracker.css
+  - stylesheets/final-quiz.css
 
 extra_javascript:
   - javascripts/progress-tracker.js
+  - javascripts/final-quiz.js
 
 
 
@@ -123,3 +125,5 @@ nav:
       - "08 · The Interview Framework & Common Mistakes": level-4/08-interview-framework.md
       - "09 · Writing Design Docs & Defending Trade-offs": level-4/09-design-reviews-tradeoffs.md
       - "10 · Capstone — Your Own Design Doc": level-4/10-capstone-design-doc.md
+  - "🎯 Final Quiz": quiz.md
+
