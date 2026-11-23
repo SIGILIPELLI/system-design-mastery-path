@@ -79,8 +79,8 @@ not_in_nav: |
 
 nav:
   - Home: index.md
-  - "💼 Interview Questions": interview-questions.md
-  - "📋 Cheat Sheet": cheat-sheet.md
+  - Interview Questions: interview-questions.md
+  - Cheat Sheet: cheat-sheet.md
   - "Level 1 · Entry":
       - Overview: level-1/index.md
       - "01 · What System Design Is & How to Approach It": level-1/01-what-is-system-design.md
@@ -129,5 +129,5 @@ nav:
       - "08 · The Interview Framework & Common Mistakes": level-4/08-interview-framework.md
       - "09 · Writing Design Docs & Defending Trade-offs": level-4/09-design-reviews-tradeoffs.md
       - "10 · Capstone — Your Own Design Doc": level-4/10-capstone-design-doc.md
-  - "🎯 Final Quiz": quiz.md
+  - Final Quiz: quiz.md
 
