@@ -1,0 +1,4341 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="179 System Design interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the System Design Mastery Path.">
+      
+      
+      
+        <link rel="canonical" href="https://learnmasterypath.com/system-design-mastery-path/interview-questions/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../cheat-sheet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+  
+  <title>System Design Interview Questions and Answers (179 Questions)</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/progress-tracker.css">
+    
+      <link rel="stylesheet" href="../stylesheets/final-quiz.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-05VBGCXN12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-05VBGCXN12');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mastery Path">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="System Design Interview Questions and Answers (179 Questions)">
+  <meta property="og:description" content="179 System Design interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the System Design Mastery Path.">
+  <meta property="og:url" content="https://learnmasterypath.com/system-design-mastery-path/interview-questions/">
+  <meta property="og:image" content="https://learnmasterypath.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mastery Path: free structured courses, beginner to master">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="System Design Interview Questions and Answers (179 Questions)">
+  <meta name="twitter:description" content="179 System Design interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the System Design Mastery Path.">
+  <meta name="twitter:image" content="https://learnmasterypath.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9440969811959397"
+     crossorigin="anonymous"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Mastery Path", "item": "https://learnmasterypath.com/"},
+      {"@type": "ListItem", "position": 2, "name": "System Design Mastery Path", "item": "https://learnmasterypath.com/system-design-mastery-path/"},
+      {"@type": "ListItem", "position": 3, "name": "Interview Questions", "item": "https://learnmasterypath.com/system-design-mastery-path/interview-questions/"}
+    ]
+  }
+  </script>
+  <style>
+    .md-banner a:hover { text-decoration: underline !important; }
+    .mp-related { margin-top: 2.4rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lightest); font-size: .78rem; }
+    .mp-related h2 { font-size: .9rem; margin: 0 0 .5rem; }
+    .mp-related ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+    .mp-related li { margin: 0 !important; }
+  </style>
+  <script type="application/json" id="mp-course-meta">{"home": false, "id": "system-design-mastery-path", "name": "System Design Mastery Path", "repo": "https://github.com/sigilipelli/system-design-mastery-path", "src": "interview-questions.md", "url": "https://learnmasterypath.com/system-design-mastery-path/"}</script>
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/learn.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/course.css?v=1">
+  <script src="https://learnmasterypath.com/assets/learn.js" defer></script>
+  <script src="https://learnmasterypath.com/assets/signup.js" defer></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#system-design-interview-questions-and-answers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <a href="https://learnmasterypath.com/" style="color: inherit; text-decoration: none;">
+    &larr; Mastery Path &middot; all 100+ free courses
+  </a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/search/" style="color: inherit; text-decoration: none;">Search all courses</a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/resume/" style="color: inherit; font-weight: 700; text-decoration: none;">
+    Got the skills? Free resume ATS check &rarr;
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="System Design Mastery Path" class="md-header__button md-logo" aria-label="System Design Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            System Design Mastery Path
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Design Interview Questions and Answers (179 Questions)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sigilipelli/system-design-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    system-design-mastery-path
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interview Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat-sheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Sheet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 1 · Entry
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-2/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 2 · Intermediate
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 3 · Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 4 · Master
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quiz/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Final Quiz
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="System Design Mastery Path" class="md-nav__button md-logo" aria-label="System Design Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    System Design Mastery Path
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sigilipelli/system-design-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    system-design-mastery-path
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-what-system-design-is-how-to-approach-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · What System Design Is &amp; How to Approach It
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-client-server-http-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Client-Server &amp; HTTP Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-latency-throughput-back-of-envelope-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Latency, Throughput &amp; Back-of-Envelope Estimation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-vertical-vs-horizontal-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Vertical vs Horizontal Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-caching-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Caching Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-sql-vs-nosql-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · SQL vs NoSQL Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cdns-edge-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · CDNs &amp; Edge Caching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-apis-rest-grpc-graphql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · APIs: REST, gRPC &amp; GraphQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-design-a-url-shortener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Design a URL Shortener
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-sharding-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Sharding &amp; Partitioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-consistent-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Consistent Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-cap-pacelc-with-nuance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · CAP &amp; PACELC, With Nuance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-message-queues-async-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Message Queues &amp; Async Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rate-limiting-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Rate Limiting Algorithms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-indexing-query-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Indexing &amp; Query Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cache-invalidation-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cache Invalidation Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-blob-object-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Blob &amp; Object Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-design-a-news-feed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Design a News Feed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-consensus-basics-raft-conceptually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Consensus Basics: Raft Conceptually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-distributed-transactions-sagas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Distributed Transactions &amp; Sagas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-idempotency-the-exactly-once-myth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Idempotency &amp; the Exactly-Once Myth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-event-driven-architecture-cdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Event-Driven Architecture &amp; CDC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-search-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Search Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-real-time-systems-websockets-pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Real-Time Systems: WebSockets &amp; Pub/Sub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-reliability-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Reliability Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-hot-keys-skew-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Hot Keys, Skew &amp; Multi-Tenancy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-design-a-chat-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Design a Chat System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-case-study-video-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Case Study: Video Streaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-case-study-ride-hailing-dispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Case Study: Ride-Hailing Dispatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-case-study-distributed-file-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Case Study: Distributed File Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-case-study-payment-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Case Study: Payment System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-multi-region-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Multi-Region &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cost-aware-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cost-Aware Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Security Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-the-interview-framework-common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · The Interview Framework &amp; Common Mistakes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-writing-design-docs-defending-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Writing Design Docs &amp; Defending Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-your-own-design-doc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone — Your Own Design Doc
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-questions-across-all-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed questions across all levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-coding-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical coding questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical coding questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-consistent-hash-ring-with-virtual-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A consistent-hash ring with virtual nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiters-compared-on-a-boundary-burst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limiters compared on a boundary burst
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 1 · Entry
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 1 · Entry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/01-what-is-system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · What System Design Is & How to Approach It
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/02-client-server-http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Client-Server & HTTP Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/03-latency-throughput-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Latency, Throughput & Back-of-Envelope Estimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/04-vertical-horizontal-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Vertical vs Horizontal Scaling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/05-load-balancing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/06-caching-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Caching Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/07-sql-vs-nosql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · SQL vs NoSQL Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/08-cdns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · CDNs & Edge Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/09-api-styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · APIs: REST, gRPC & GraphQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/10-project-url-shortener/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Design a URL Shortener
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 2 · Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 2 · Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/01-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Replication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/02-sharding-partitioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Sharding & Partitioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/03-consistent-hashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Consistent Hashing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/04-cap-pacelc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · CAP & PACELC, With Nuance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/05-message-queues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Message Queues & Async Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/06-rate-limiting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Rate Limiting Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/07-indexing-query-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Indexing & Query Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/08-cache-invalidation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Cache Invalidation Strategies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/09-object-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Blob & Object Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/10-project-news-feed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Design a News Feed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 3 · Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 3 · Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/01-consensus-raft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Consensus Basics: Raft Conceptually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/02-distributed-transactions-sagas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Distributed Transactions & Sagas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/03-idempotency-exactly-once/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Idempotency & the Exactly-Once Myth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/04-event-driven-cdc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Event-Driven Architecture & CDC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/05-search-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Search Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/06-real-time-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Real-Time Systems: WebSockets & Pub/Sub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/07-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/08-reliability-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Reliability Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/09-multi-tenant-hot-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Hot Keys, Skew & Multi-Tenancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/10-project-chat-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Design a Chat System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 4 · Master
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 4 · Master
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/01-case-video-streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Case Study: Video Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/02-case-ride-hailing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Case Study: Ride-Hailing Dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/03-case-distributed-file-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Case Study: Distributed File Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/04-case-payment-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Case Study: Payment System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/05-multi-region-dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Multi-Region & Disaster Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/06-cost-aware-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Cost-Aware Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/07-security-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/08-interview-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · The Interview Framework & Common Mistakes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/09-design-reviews-tradeoffs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Writing Design Docs & Defending Trade-offs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/10-capstone-design-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Capstone — Your Own Design Doc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-what-system-design-is-how-to-approach-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · What System Design Is &amp; How to Approach It
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-client-server-http-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Client-Server &amp; HTTP Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-latency-throughput-back-of-envelope-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Latency, Throughput &amp; Back-of-Envelope Estimation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-vertical-vs-horizontal-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Vertical vs Horizontal Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-caching-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Caching Fundamentals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-sql-vs-nosql-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · SQL vs NoSQL Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cdns-edge-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · CDNs &amp; Edge Caching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-apis-rest-grpc-graphql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · APIs: REST, gRPC &amp; GraphQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-design-a-url-shortener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Design a URL Shortener
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-sharding-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Sharding &amp; Partitioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-consistent-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Consistent Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-cap-pacelc-with-nuance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · CAP &amp; PACELC, With Nuance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-message-queues-async-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Message Queues &amp; Async Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rate-limiting-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Rate Limiting Algorithms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-indexing-query-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Indexing &amp; Query Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cache-invalidation-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cache Invalidation Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-blob-object-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Blob &amp; Object Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-design-a-news-feed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Design a News Feed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-consensus-basics-raft-conceptually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Consensus Basics: Raft Conceptually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-distributed-transactions-sagas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Distributed Transactions &amp; Sagas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-idempotency-the-exactly-once-myth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Idempotency &amp; the Exactly-Once Myth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-event-driven-architecture-cdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Event-Driven Architecture &amp; CDC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-search-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Search Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-real-time-systems-websockets-pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Real-Time Systems: WebSockets &amp; Pub/Sub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-reliability-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Reliability Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-hot-keys-skew-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Hot Keys, Skew &amp; Multi-Tenancy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-design-a-chat-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Design a Chat System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-case-study-video-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Case Study: Video Streaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-case-study-ride-hailing-dispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Case Study: Ride-Hailing Dispatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-case-study-distributed-file-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Case Study: Distributed File Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-case-study-payment-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Case Study: Payment System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-multi-region-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Multi-Region &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cost-aware-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cost-Aware Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Security Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-the-interview-framework-common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · The Interview Framework &amp; Common Mistakes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-writing-design-docs-defending-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Writing Design Docs &amp; Defending Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-your-own-design-doc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone — Your Own Design Doc
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-questions-across-all-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed questions across all levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-coding-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical coding questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical coding questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-consistent-hash-ring-with-virtual-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A consistent-hash ring with virtual nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiters-compared-on-a-boundary-burst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limiters compared on a boundary burst
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="system-design-interview-questions-and-answers">System Design Interview Questions and Answers<a class="headerlink" href="#system-design-interview-questions-and-answers" title="Permanent link">&para;</a></h1>
+<p><strong>179 questions</strong> with the correct answer and a short explanation, organised from beginner (Level 1) to advanced (Level 4). Every question comes from a lesson in the free System Design Mastery Path, so you can open the lesson to go deeper.</p>
+<div class="admonition tip">
+<p class="admonition-title">Practise, don't just read</p>
+<p>Each lesson also ends with an interactive quiz, and the <a href="../quiz/">final quiz</a> tests all four levels. Try to answer each question below before reading the answer.</p>
+</div>
+<h2 id="level-1-entry">Level 1 · Entry<a class="headerlink" href="#level-1-entry" title="Permanent link">&para;</a></h2>
+<h3 id="01-what-system-design-is-how-to-approach-it"><a href="../level-1/01-what-is-system-design/">01 · What System Design Is &amp; How to Approach It</a><a class="headerlink" href="#01-what-system-design-is-how-to-approach-it" title="Permanent link">&para;</a></h3>
+<p><strong>Q1.</strong> What is the main goal of system design?</p>
+<p><strong>Answer:</strong> Meet functional and non-functional requirements (scale, latency, availability, cost) with explicit trade-offs</p>
+<p>There is no single best design, only trade-offs against requirements.</p>
+<p><strong>Q2.</strong> Which step should come first in a design discussion?</p>
+<p><strong>Answer:</strong> Clarify requirements and constraints, then estimate scale</p>
+<p>Requirements drive every later choice.</p>
+<p><strong>Q3.</strong> What is a non-functional requirement?</p>
+<p><strong>Answer:</strong> A quality such as latency, availability, durability or cost</p>
+<p>They often decide the architecture.</p>
+<p><strong>Q4.</strong> Why state assumptions explicitly?</p>
+<p><strong>Answer:</strong> So estimates and trade-offs can be checked and challenged</p>
+<p>Unstated assumptions hide risk.</p>
+<h3 id="02-client-server-http-basics"><a href="../level-1/02-client-server-http/">02 · Client-Server &amp; HTTP Basics</a><a class="headerlink" href="#02-client-server-http-basics" title="Permanent link">&para;</a></h3>
+<p><strong>Q5.</strong> What does HTTP being stateless mean?</p>
+<p><strong>Answer:</strong> Each request carries all the information the server needs; the server keeps no client session by default</p>
+<p>State lives in tokens, cookies or backing stores.</p>
+<p><strong>Q6.</strong> Which status class means a client error?</p>
+<p><strong>Answer:</strong> 4xx</p>
+<p>5xx means server errors.</p>
+<p><strong>Q7.</strong> A request needs DNS 20 ms, TCP 30 ms, TLS 60 ms and 50 ms of server time. Assuming nothing is reused or cached, what is the minimum time to first byte (ms)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">+</span><span class="mi">30</span><span class="o">+</span><span class="mi">60</span><span class="o">+</span><span class="mi">50</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 160</p>
+<p>Connection reuse and caching remove the setup costs on later requests. Verified by running it.</p>
+<p><strong>Q8.</strong> What does keep-alive (connection reuse) save?</p>
+<p><strong>Answer:</strong> Repeated TCP and TLS handshakes</p>
+<p>HTTP/2 multiplexes many requests on one connection.</p>
+<h3 id="03-latency-throughput-back-of-envelope-estimation"><a href="../level-1/03-latency-throughput-estimation/">03 · Latency, Throughput &amp; Back-of-Envelope Estimation</a><a class="headerlink" href="#03-latency-throughput-back-of-envelope-estimation" title="Permanent link">&para;</a></h3>
+<p><strong>Q9.</strong> A service handles 50 million requests per day. What is the average queries per second (rounded)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">50_000_000</span><span class="o">/</span><span class="mi">86_400</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 579</p>
+<p>There are 86,400 seconds in a day; peaks are usually 2-10x the average. Verified by running it.</p>
+<p><strong>Q10.</strong> With a 3x peak factor, what peak QPS do you plan for?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">50_000_000</span><span class="o">/</span><span class="mi">86_400</span><span class="o">*</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 1736</p>
+<p>Plan for peak, not average. Verified by running it.</p>
+<p><strong>Q11.</strong> Each record is 2 KB and you store 100 million records. How many GB (using 1 GB = 10^9 bytes)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">100_000_000</span><span class="o">*</span><span class="mi">2_000</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 200.0</p>
+<p>Then multiply by replicas and growth. Verified by running it.</p>
+<p><strong>Q12.</strong> Which latency number is roughly right: reading 1 MB sequentially from SSD or a network round trip within one datacentre?</p>
+<p><strong>Answer:</strong> They are both on the order of a millisecond or less; cross-continent round trips are around 100 ms</p>
+<p>Know orders of magnitude, not exact values.</p>
+<h3 id="04-vertical-vs-horizontal-scaling"><a href="../level-1/04-vertical-horizontal-scaling/">04 · Vertical vs Horizontal Scaling</a><a class="headerlink" href="#04-vertical-vs-horizontal-scaling" title="Permanent link">&para;</a></h3>
+<p><strong>Q13.</strong> What is vertical scaling?</p>
+<p><strong>Answer:</strong> Adding more power (CPU, RAM) to a single machine</p>
+<p>Simple but limited and a single point of failure.</p>
+<p><strong>Q14.</strong> What is horizontal scaling?</p>
+<p><strong>Answer:</strong> Adding more machines and spreading load across them</p>
+<p>Requires stateless services or partitioned state.</p>
+<p><strong>Q15.</strong> Why make web servers stateless?</p>
+<p><strong>Answer:</strong> Any instance can serve any request, so you can add or remove instances freely</p>
+<p>Store sessions in a shared store or token.</p>
+<p><strong>Q16.</strong> What limits horizontal scaling of a single-primary database?</p>
+<p><strong>Answer:</strong> Write throughput on the primary; reads scale with replicas, writes need sharding</p>
+<p>Plan for the write path.</p>
+<h3 id="05-load-balancing"><a href="../level-1/05-load-balancing/">05 · Load Balancing</a><a class="headerlink" href="#05-load-balancing" title="Permanent link">&para;</a></h3>
+<p><strong>Q17.</strong> Round-robin over 4 servers: which server index (0-based) handles request 10?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 2</p>
+<p>Index = request number mod server count. Verified by running it.</p>
+<p><strong>Q18.</strong> What do health checks let a load balancer do?</p>
+<p><strong>Answer:</strong> Stop sending traffic to failed instances</p>
+<p>Active or passive.</p>
+<p><strong>Q19.</strong> What is a downside of sticky sessions?</p>
+<p><strong>Answer:</strong> Uneven load and lost sessions if the server dies</p>
+<p>Prefer shared session stores or tokens.</p>
+<p><strong>Q20.</strong> What is the difference between L4 and L7 load balancing?</p>
+<p><strong>Answer:</strong> L4 routes by IP and port; L7 understands HTTP and can route by path, header or cookie</p>
+<p>L7 costs more CPU but is smarter.</p>
+<h3 id="06-caching-fundamentals"><a href="../level-1/06-caching-fundamentals/">06 · Caching Fundamentals</a><a class="headerlink" href="#06-caching-fundamentals" title="Permanent link">&para;</a></h3>
+<p><strong>Q21.</strong> A cache has a 90% hit rate. Cache reads take 1 ms and database reads 20 ms. What is the average read time (ms)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">print</span><span class="p">(</span><span class="mf">0.9</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 2.9</p>
+<p>Average = hit rate x hit time + miss rate x miss time. Verified by running it.</p>
+<p><strong>Q22.</strong> What is cache-aside?</p>
+<p><strong>Answer:</strong> The app checks the cache first, loads from the database on a miss and populates the cache</p>
+<p>The most common pattern.</p>
+<p><strong>Q23.</strong> What does TTL do?</p>
+<p><strong>Answer:</strong> Bounds how long an entry may be stale and limits memory use</p>
+<p>A safety net for invalidation.</p>
+<p><strong>Q24.</strong> What is an LRU cache?</p>
+<p><strong>Answer:</strong> It evicts the least recently used entry when full</p>
+<p>Good for temporal locality.</p>
+<h3 id="07-sql-vs-nosql-basics"><a href="../level-1/07-sql-vs-nosql/">07 · SQL vs NoSQL Basics</a><a class="headerlink" href="#07-sql-vs-nosql-basics" title="Permanent link">&para;</a></h3>
+<p><strong>Q25.</strong> When is SQL a strong default?</p>
+<p><strong>Answer:</strong> Relational data needing joins, constraints and transactions</p>
+<p>Relational databases scale further than most think.</p>
+<p><strong>Q26.</strong> What do many NoSQL stores trade for scale?</p>
+<p><strong>Answer:</strong> Rich queries, joins and sometimes strong consistency</p>
+<p>Model data around access patterns.</p>
+<p><strong>Q27.</strong> What is a wide-column or key-value store good at?</p>
+<p><strong>Answer:</strong> Very high write throughput and simple lookups by key at large scale</p>
+<p>Examples: Cassandra, DynamoDB.</p>
+<p><strong>Q28.</strong> What should drive the database choice?</p>
+<p><strong>Answer:</strong> Access patterns, consistency needs and operational maturity, not fashion</p>
+<p>Often use more than one.</p>
+<h3 id="08-cdns-edge-caching"><a href="../level-1/08-cdns/">08 · CDNs &amp; Edge Caching</a><a class="headerlink" href="#08-cdns-edge-caching" title="Permanent link">&para;</a></h3>
+<p><strong>Q29.</strong> What does a CDN do?</p>
+<p><strong>Answer:</strong> Caches content at edge locations close to users</p>
+<p>Lower latency and origin load.</p>
+<p><strong>Q30.</strong> Which content suits a CDN best?</p>
+<p><strong>Answer:</strong> Static, cacheable assets such as images, scripts and video segments</p>
+<p>Dynamic content can be cached with care.</p>
+<p><strong>Q31.</strong> What is cache invalidation on a CDN?</p>
+<p><strong>Answer:</strong> Purging or versioning objects so users get updated content</p>
+<p>Prefer versioned URLs.</p>
+<p><strong>Q32.</strong> What is origin shielding?</p>
+<p><strong>Answer:</strong> A middle cache tier that reduces requests reaching the origin</p>
+<p>Protects the origin under load.</p>
+<h3 id="09-apis-rest-grpc-graphql"><a href="../level-1/09-api-styles/">09 · APIs: REST, gRPC &amp; GraphQL</a><a class="headerlink" href="#09-apis-rest-grpc-graphql" title="Permanent link">&para;</a></h3>
+<p><strong>Q33.</strong> What is REST organised around?</p>
+<p><strong>Answer:</strong> Resources identified by URLs and manipulated with standard HTTP methods</p>
+<p>Stateless interactions.</p>
+<p><strong>Q34.</strong> When is GraphQL attractive?</p>
+<p><strong>Answer:</strong> When clients need to shape responses and avoid over- or under-fetching</p>
+<p>Watch out for expensive queries.</p>
+<p><strong>Q35.</strong> What is gRPC good for?</p>
+<p><strong>Answer:</strong> Efficient, typed service-to-service calls over HTTP/2 with Protocol Buffers</p>
+<p>Streaming support.</p>
+<p><strong>Q36.</strong> Why paginate list endpoints?</p>
+<p><strong>Answer:</strong> To bound response size and cost; cursor pagination is stable under inserts</p>
+<p>Offset pagination gets slow at depth.</p>
+<h3 id="10-project-design-a-url-shortener"><a href="../level-1/10-project-url-shortener/">10 · Project — Design a URL Shortener</a><a class="headerlink" href="#10-project-design-a-url-shortener" title="Permanent link">&para;</a></h3>
+<p><strong>Q37.</strong> A URL shortener issues 7-character base62 codes (a-z, A-Z, 0-9). How many distinct codes exist?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">62</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 3521614606208</p>
+<p>62^7 is about 3.5 trillion, plenty for most services. Verified by running it.</p>
+<p><strong>Q38.</strong> At 100 million new URLs per year, how many years until 3.5 trillion codes are used?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">3_521_614_606_208</span><span class="o">/</span><span class="mi">100_000_000</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 35216</p>
+<p>Capacity is not the issue; avoiding collisions and hot keys is. Verified by running it.</p>
+<p><strong>Q39.</strong> How can you generate unique short codes without collisions?</p>
+<p><strong>Answer:</strong> A counter or ID generator encoded in base62, or random codes with a uniqueness check</p>
+<p>Pre-generate ranges per server.</p>
+<p><strong>Q40.</strong> Why is a URL shortener read-heavy and how does that shape the design?</p>
+<p><strong>Answer:</strong> Many more redirects than creations, so cache hot mappings and use replicas</p>
+<p>Optimise the read path.</p>
+<h2 id="level-2-intermediate">Level 2 · Intermediate<a class="headerlink" href="#level-2-intermediate" title="Permanent link">&para;</a></h2>
+<h3 id="01-replication"><a href="../level-2/01-replication/">01 · Replication</a><a class="headerlink" href="#01-replication" title="Permanent link">&para;</a></h3>
+<p><strong>Q41.</strong> What is replication?</p>
+<p><strong>Answer:</strong> Keeping copies of data on multiple nodes for availability and read scaling</p>
+<p>Does not by itself increase write capacity.</p>
+<p><strong>Q42.</strong> What is replication lag?</p>
+<p><strong>Answer:</strong> The delay before a replica reflects a primary's writes, causing stale reads</p>
+<p>Read-your-writes needs care.</p>
+<p><strong>Q43.</strong> What is the difference between sync and async replication?</p>
+<p><strong>Answer:</strong> Synchronous waits for replicas before acknowledging (safer, slower); asynchronous does not (faster, can lose recent writes)</p>
+<p>Semi-sync is a compromise.</p>
+<p><strong>Q44.</strong> With 3 replicas and a quorum of W=2 writes and R=2 reads, do reads always overlap the latest write? (R + W &gt; N)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">N</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="o">+</span><span class="n">W</span><span class="o">&gt;</span><span class="n">N</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> True</p>
+<p>Overlapping read and write quorums guarantee seeing the latest acknowledged write. Verified by running it.</p>
+<h3 id="02-sharding-partitioning"><a href="../level-2/02-sharding-partitioning/">02 · Sharding &amp; Partitioning</a><a class="headerlink" href="#02-sharding-partitioning" title="Permanent link">&para;</a></h3>
+<p><strong>Q45.</strong> What is sharding?</p>
+<p><strong>Answer:</strong> Splitting data across nodes so each holds a subset</p>
+<p>Scales writes and storage.</p>
+<p><strong>Q46.</strong> What is a hot shard?</p>
+<p><strong>Answer:</strong> A shard receiving disproportionate load, often from a skewed key</p>
+<p>Choose keys that distribute evenly.</p>
+<p><strong>Q47.</strong> Hash-modulo sharding with 4 shards: which shard holds key 1234567?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">1234567</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 3</p>
+<p>Adding a shard remaps most keys, which is why consistent hashing exists. Verified by running it.</p>
+<p><strong>Q48.</strong> What makes cross-shard queries hard?</p>
+<p><strong>Answer:</strong> Joins and transactions span nodes, so they need scatter-gather or denormalisation</p>
+<p>Design to keep related data together.</p>
+<h3 id="03-consistent-hashing"><a href="../level-2/03-consistent-hashing/">03 · Consistent Hashing</a><a class="headerlink" href="#03-consistent-hashing" title="Permanent link">&para;</a></h3>
+<p><strong>Q49.</strong> Consistent hashing on a ring of 10 nodes: when you add one node, what fraction of keys moves on average?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">11</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 0.091</p>
+<p>About K/N keys move, versus nearly all with modulo hashing. Verified by running it.</p>
+<p><strong>Q50.</strong> With modulo hashing, going from 4 to 5 nodes remaps what fraction of 1000 keys?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">moved</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span><span class="o">%</span><span class="mi">4</span> <span class="o">!=</span> <span class="n">k</span><span class="o">%</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">moved</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 0.8</p>
+<p>Modulo hashing reshuffles most keys on a resize. Verified by running it.</p>
+<p><strong>Q51.</strong> What do virtual nodes add to consistent hashing?</p>
+<p><strong>Answer:</strong> More even key distribution and smoother rebalancing</p>
+<p>Each physical node owns many ring positions.</p>
+<p><strong>Q52.</strong> Where is consistent hashing used?</p>
+<p><strong>Answer:</strong> Distributed caches, sharded stores and load balancers</p>
+<p>E.g. Dynamo-style systems.</p>
+<h3 id="04-cap-pacelc-with-nuance"><a href="../level-2/04-cap-pacelc/">04 · CAP &amp; PACELC, With Nuance</a><a class="headerlink" href="#04-cap-pacelc-with-nuance" title="Permanent link">&para;</a></h3>
+<p><strong>Q53.</strong> What does the CAP theorem say about partitions?</p>
+<p><strong>Answer:</strong> During a network partition you must choose between consistency and availability</p>
+<p>P is not optional in distributed systems.</p>
+<p><strong>Q54.</strong> What does PACELC add?</p>
+<p><strong>Answer:</strong> Even without partitions there is a trade-off between latency and consistency</p>
+<p>Else Latency vs Consistency.</p>
+<p><strong>Q55.</strong> Which is a CP-style behaviour?</p>
+<p><strong>Answer:</strong> Refusing writes on the minority side of a partition to avoid divergence</p>
+<p>Consensus systems often do this.</p>
+<p><strong>Q56.</strong> Which is an AP-style behaviour?</p>
+<p><strong>Answer:</strong> Accepting writes on both sides and reconciling later (eventual consistency)</p>
+<p>Conflicts need resolution rules.</p>
+<h3 id="05-message-queues-async-processing"><a href="../level-2/05-message-queues/">05 · Message Queues &amp; Async Processing</a><a class="headerlink" href="#05-message-queues-async-processing" title="Permanent link">&para;</a></h3>
+<p><strong>Q57.</strong> Why use a message queue?</p>
+<p><strong>Answer:</strong> Decouple producers and consumers, absorb bursts and enable retries</p>
+<p>Async processing.</p>
+<p><strong>Q58.</strong> What delivery guarantee is typical?</p>
+<p><strong>Answer:</strong> At-least-once, so consumers must be idempotent</p>
+<p>Exactly-once is built from idempotency.</p>
+<p><strong>Q59.</strong> What is a dead-letter queue?</p>
+<p><strong>Answer:</strong> Where messages go after repeated failures for inspection</p>
+<p>Alert on it.</p>
+<p><strong>Q60.</strong> A queue gets 1000 msgs/s and consumers each handle 50 msgs/s. How many consumers keep up?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">1000</span><span class="o">/</span><span class="mi">50</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 20</p>
+<p>Add headroom for bursts. Verified by running it.</p>
+<h3 id="06-rate-limiting-algorithms"><a href="../level-2/06-rate-limiting/">06 · Rate Limiting Algorithms</a><a class="headerlink" href="#06-rate-limiting-algorithms" title="Permanent link">&para;</a></h3>
+<p><strong>Q61.</strong> A token bucket with capacity 10 refills 5 tokens/s. A client sends 10 requests at t=0 and 10 more at t=1. How many of the second burst are allowed?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">cap</span><span class="p">,</span><span class="n">rate</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">tokens</span><span class="o">=</span><span class="n">cap</span><span class="o">-</span><span class="mi">10</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">tokens</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">cap</span><span class="p">,</span><span class="n">tokens</span><span class="o">+</span><span class="n">rate</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 5</p>
+<p>After the first burst the bucket is empty and refills 5 tokens in a second. Verified by running it.</p>
+<p><strong>Q62.</strong> What does a fixed-window limiter suffer from?</p>
+<p><strong>Answer:</strong> Bursts at window boundaries can double the allowed rate</p>
+<p>Sliding windows smooth this.</p>
+<p><strong>Q63.</strong> Where do you enforce rate limits in a distributed system?</p>
+<p><strong>Answer:</strong> At the edge or gateway with a shared counter (for example Redis) keyed by client</p>
+<p>Per-instance counters are inconsistent.</p>
+<p><strong>Q64.</strong> What should a rate-limited response include?</p>
+<p><strong>Answer:</strong> 429 and a Retry-After hint</p>
+<p>Be explicit.</p>
+<h3 id="07-indexing-query-patterns"><a href="../level-2/07-indexing-query-patterns/">07 · Indexing &amp; Query Patterns</a><a class="headerlink" href="#07-indexing-query-patterns" title="Permanent link">&para;</a></h3>
+<p><strong>Q65.</strong> What does a database index trade?</p>
+<p><strong>Answer:</strong> Faster reads for slower writes and more storage</p>
+<p>Index what you query.</p>
+<p><strong>Q66.</strong> What does a composite index (a, b) serve well?</p>
+<p><strong>Answer:</strong> Queries filtering on a, or on a and b (the leftmost prefix)</p>
+<p>Order matters.</p>
+<p><strong>Q67.</strong> Why can LIKE '%term' not use a normal B-tree index?</p>
+<p><strong>Answer:</strong> The leading wildcard prevents prefix lookups</p>
+<p>Use full-text or trigram indexes.</p>
+<p><strong>Q68.</strong> What is a covering index?</p>
+<p><strong>Answer:</strong> An index containing all columns a query needs, avoiding table lookups</p>
+<p>Faster reads.</p>
+<h3 id="08-cache-invalidation-strategies"><a href="../level-2/08-cache-invalidation/">08 · Cache Invalidation Strategies</a><a class="headerlink" href="#08-cache-invalidation-strategies" title="Permanent link">&para;</a></h3>
+<p><strong>Q69.</strong> What makes cache invalidation hard?</p>
+<p><strong>Answer:</strong> Knowing when cached data is stale across many readers and writers</p>
+<p>Prefer TTLs plus explicit invalidation on writes.</p>
+<p><strong>Q70.</strong> What is write-through caching?</p>
+<p><strong>Answer:</strong> Writes go to the cache and the database together so the cache stays fresh</p>
+<p>Costs write latency.</p>
+<p><strong>Q71.</strong> What is a cache stampede and a fix?</p>
+<p><strong>Answer:</strong> Many requests miss at once on a hot key; use single-flight locking or jittered TTLs</p>
+<p>Protect the database.</p>
+<p><strong>Q72.</strong> What does versioned keys give you?</p>
+<p><strong>Answer:</strong> Invalidation by changing the version so old entries are never read</p>
+<p>Old entries expire naturally.</p>
+<h3 id="09-blob-object-storage"><a href="../level-2/09-object-storage/">09 · Blob &amp; Object Storage</a><a class="headerlink" href="#09-blob-object-storage" title="Permanent link">&para;</a></h3>
+<p><strong>Q73.</strong> What is object storage good for?</p>
+<p><strong>Answer:</strong> Large, immutable blobs such as images and backups, with high durability and cheap capacity</p>
+<p>Examples: S3, GCS.</p>
+<p><strong>Q74.</strong> How do clients upload large files safely?</p>
+<p><strong>Answer:</strong> Direct to storage with pre-signed URLs and multipart uploads</p>
+<p>Keeps the app tier light.</p>
+<p><strong>Q75.</strong> A 5 GB file is uploaded in 100 MB parts. How many parts?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">5_000</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 50</p>
+<p>Parts can be retried independently. Verified by running it.</p>
+<p><strong>Q76.</strong> Why store metadata in a database and bytes in object storage?</p>
+<p><strong>Answer:</strong> Each system does what it is best at, and queries stay fast</p>
+<p>Keep a key reference.</p>
+<h3 id="10-project-design-a-news-feed"><a href="../level-2/10-project-news-feed/">10 · Project — Design a News Feed</a><a class="headerlink" href="#10-project-design-a-news-feed" title="Permanent link">&para;</a></h3>
+<p><strong>Q77.</strong> What is fan-out on write for a news feed?</p>
+<p><strong>Answer:</strong> Pushing a new post into followers' feeds at write time for fast reads</p>
+<p>Costly for users with many followers.</p>
+<p><strong>Q78.</strong> What is fan-out on read?</p>
+<p><strong>Answer:</strong> Building a feed at read time by merging followed users' posts</p>
+<p>Slower reads, cheaper writes.</p>
+<p><strong>Q79.</strong> How are celebrity accounts typically handled?</p>
+<p><strong>Answer:</strong> A hybrid: push for normal users and pull for accounts with huge follower counts</p>
+<p>Avoid write amplification.</p>
+<p><strong>Q80.</strong> A user with 2 million followers posts; fan-out on write creates how many feed entries?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2_000_000</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 2000000</p>
+<p>That write amplification is why hybrids exist. Verified by running it.</p>
+<h2 id="level-3-advanced">Level 3 · Advanced<a class="headerlink" href="#level-3-advanced" title="Permanent link">&para;</a></h2>
+<h3 id="01-consensus-basics-raft-conceptually"><a href="../level-3/01-consensus-raft/">01 · Consensus Basics: Raft Conceptually</a><a class="headerlink" href="#01-consensus-basics-raft-conceptually" title="Permanent link">&para;</a></h3>
+<p><strong>Q81.</strong> What problem does consensus solve?</p>
+<p><strong>Answer:</strong> Getting a group of nodes to agree on a value or log order despite failures</p>
+<p>Raft and Paxos.</p>
+<p><strong>Q82.</strong> A 5-node Raft cluster needs how many nodes for a majority?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 3</p>
+<p>It tolerates 2 failures. Verified by running it.</p>
+<p><strong>Q83.</strong> What does a Raft leader do?</p>
+<p><strong>Answer:</strong> Accepts writes and replicates log entries to followers, committing when a majority has them</p>
+<p>Followers redirect clients.</p>
+<p><strong>Q84.</strong> Why use an odd number of nodes?</p>
+<p><strong>Answer:</strong> Even counts tolerate no more failures than the next lower odd count</p>
+<p>4 nodes tolerate 1, like 3.</p>
+<h3 id="02-distributed-transactions-sagas"><a href="../level-3/02-distributed-transactions-sagas/">02 · Distributed Transactions &amp; Sagas</a><a class="headerlink" href="#02-distributed-transactions-sagas" title="Permanent link">&para;</a></h3>
+<p><strong>Q85.</strong> Why are distributed transactions hard?</p>
+<p><strong>Answer:</strong> Partial failures and network delays make atomic commit across services costly and blocking</p>
+<p>Avoid when possible.</p>
+<p><strong>Q86.</strong> What is a saga?</p>
+<p><strong>Answer:</strong> A sequence of local transactions with compensating actions to undo earlier steps on failure</p>
+<p>Eventual consistency across services.</p>
+<p><strong>Q87.</strong> What is a compensating action for 'charge card'?</p>
+<p><strong>Answer:</strong> Refund the charge</p>
+<p>It must itself be idempotent.</p>
+<p><strong>Q88.</strong> What is two-phase commit's main drawback?</p>
+<p><strong>Answer:</strong> Coordinator failure can block participants holding locks</p>
+<p>Sagas avoid the lock holding.</p>
+<h3 id="03-idempotency-the-exactly-once-myth"><a href="../level-3/03-idempotency-exactly-once/">03 · Idempotency &amp; the Exactly-Once Myth</a><a class="headerlink" href="#03-idempotency-the-exactly-once-myth" title="Permanent link">&para;</a></h3>
+<p><strong>Q89.</strong> What does idempotent mean for an API?</p>
+<p><strong>Answer:</strong> Repeating the same request has the same effect as sending it once</p>
+<p>PUT and DELETE are idempotent by definition.</p>
+<p><strong>Q90.</strong> How do you make a payment POST safe to retry?</p>
+<p><strong>Answer:</strong> Require an idempotency key and store the result per key</p>
+<p>The server returns the stored response.</p>
+<p><strong>Q91.</strong> A handler processes messages at-least-once. If message ids [1,2,2,3,1] arrive and duplicates are ignored, how many are processed?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">seen</span><span class="o">=</span><span class="nb">set</span><span class="p">();</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 3</p>
+<p>Deduplicate by a stable id. Verified by running it.</p>
+<p><strong>Q92.</strong> How is 'exactly once' usually achieved in practice?</p>
+<p><strong>Answer:</strong> At-least-once delivery plus idempotent processing</p>
+<p>Effectively-once.</p>
+<h3 id="04-event-driven-architecture-cdc"><a href="../level-3/04-event-driven-cdc/">04 · Event-Driven Architecture &amp; CDC</a><a class="headerlink" href="#04-event-driven-architecture-cdc" title="Permanent link">&para;</a></h3>
+<p><strong>Q93.</strong> What does change data capture (CDC) do?</p>
+<p><strong>Answer:</strong> Streams database changes (from the log) to other systems</p>
+<p>Debezium reads the write-ahead log.</p>
+<p><strong>Q94.</strong> What is the outbox pattern?</p>
+<p><strong>Answer:</strong> Writing the event to an outbox table in the same transaction as the state, then publishing it reliably</p>
+<p>Avoids dual-write inconsistencies.</p>
+<p><strong>Q95.</strong> What is event sourcing?</p>
+<p><strong>Answer:</strong> Storing a sequence of events as the source of truth and deriving state by replay</p>
+<p>Gives audit and replay.</p>
+<p><strong>Q96.</strong> What is a downside of event-driven designs?</p>
+<p><strong>Answer:</strong> Harder reasoning about ordering, duplicates and eventual consistency</p>
+<p>Invest in observability.</p>
+<h3 id="05-search-systems"><a href="../level-3/05-search-systems/">05 · Search Systems</a><a class="headerlink" href="#05-search-systems" title="Permanent link">&para;</a></h3>
+<p><strong>Q97.</strong> What data structure powers full-text search?</p>
+<p><strong>Answer:</strong> An inverted index mapping terms to the documents containing them</p>
+<p>Built by Lucene, Elasticsearch.</p>
+<p><strong>Q98.</strong> Posting lists: 'cat' -&gt; docs {1,2,4}, 'dog' -&gt; docs {2,3,4}. Which docs match 'cat AND dog'?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> [2, 4]</p>
+<p>AND intersects posting lists. Verified by running it.</p>
+<p><strong>Q99.</strong> Why keep search indexes separate from the primary database?</p>
+<p><strong>Answer:</strong> Different access patterns, scaling and eventual consistency via CDC</p>
+<p>Search is a derived view.</p>
+<p><strong>Q100.</strong> What does ranking (e.g. BM25) do?</p>
+<p><strong>Answer:</strong> Orders matching documents by relevance</p>
+<p>Beyond simple matching.</p>
+<h3 id="06-real-time-systems-websockets-pubsub"><a href="../level-3/06-real-time-systems/">06 · Real-Time Systems: WebSockets &amp; Pub/Sub</a><a class="headerlink" href="#06-real-time-systems-websockets-pubsub" title="Permanent link">&para;</a></h3>
+<p><strong>Q101.</strong> Which protocol suits server push to browsers?</p>
+<p><strong>Answer:</strong> WebSockets (or Server-Sent Events for one-way streams)</p>
+<p>Persistent connections.</p>
+<p><strong>Q102.</strong> What is a challenge of WebSocket scale?</p>
+<p><strong>Answer:</strong> Holding many long-lived connections, so state and routing need a shared pub/sub backbone</p>
+<p>Sticky routing and presence.</p>
+<p><strong>Q103.</strong> What does long polling do?</p>
+<p><strong>Answer:</strong> The client holds a request open until the server has data, then reconnects</p>
+<p>Simpler fallback.</p>
+<p><strong>Q104.</strong> What is a presence system?</p>
+<p><strong>Answer:</strong> Tracking which users are online, typically with heartbeats and TTLs</p>
+<p>Expire entries on missed heartbeats.</p>
+<h3 id="07-observability"><a href="../level-3/07-observability/">07 · Observability</a><a class="headerlink" href="#07-observability" title="Permanent link">&para;</a></h3>
+<p><strong>Q105.</strong> What are the three pillars of observability?</p>
+<p><strong>Answer:</strong> Metrics, logs and traces</p>
+<p>Each answers different questions.</p>
+<p><strong>Q106.</strong> A service has an SLO of 99.9% over 30 days. How many minutes of error budget is that? (rounded)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">0.001</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 43</p>
+<p>43,200 minutes x 0.1% = 43.2. Verified by running it.</p>
+<p><strong>Q107.</strong> What are the golden signals?</p>
+<p><strong>Answer:</strong> Latency, traffic, errors and saturation</p>
+<p>Start dashboards there.</p>
+<p><strong>Q108.</strong> Why alert on symptoms rather than causes?</p>
+<p><strong>Answer:</strong> Symptoms indicate user impact and reduce noise</p>
+<p>Causes go on dashboards.</p>
+<h3 id="08-reliability-patterns"><a href="../level-3/08-reliability-patterns/">08 · Reliability Patterns</a><a class="headerlink" href="#08-reliability-patterns" title="Permanent link">&para;</a></h3>
+<p><strong>Q109.</strong> What is a circuit breaker?</p>
+<p><strong>Answer:</strong> Stops calling a failing dependency for a while so it can recover and callers fail fast</p>
+<p>Protects resources.</p>
+<p><strong>Q110.</strong> Exponential backoff starting at 100 ms doubling each retry: what is the wait before the 4th retry (ms)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 800</p>
+<p>100, 200, 400, 800. Verified by running it.</p>
+<p><strong>Q111.</strong> Why add jitter to retries?</p>
+<p><strong>Answer:</strong> So clients do not retry in lockstep and overload a recovering service</p>
+<p>Random spread.</p>
+<p><strong>Q112.</strong> What is a bulkhead?</p>
+<p><strong>Answer:</strong> Isolating resources so one failing component cannot exhaust everything</p>
+<p>Separate thread pools or pools per dependency.</p>
+<h3 id="09-hot-keys-skew-multi-tenancy"><a href="../level-3/09-multi-tenant-hot-keys/">09 · Hot Keys, Skew &amp; Multi-Tenancy</a><a class="headerlink" href="#09-hot-keys-skew-multi-tenancy" title="Permanent link">&para;</a></h3>
+<p><strong>Q113.</strong> What is the noisy neighbour problem?</p>
+<p><strong>Answer:</strong> One tenant consuming shared resources and degrading others</p>
+<p>Use quotas and isolation.</p>
+<p><strong>Q114.</strong> What is a hot key?</p>
+<p><strong>Answer:</strong> A key receiving disproportionate traffic that overloads one node</p>
+<p>Mitigate with replication or key splitting.</p>
+<p><strong>Q115.</strong> How can you mitigate a hot cache key?</p>
+<p><strong>Answer:</strong> Replicate it across nodes or add a short local cache in front</p>
+<p>Split with random suffixes.</p>
+<p><strong>Q116.</strong> How do you isolate tenants?</p>
+<p><strong>Answer:</strong> Quotas, rate limits and, for large tenants, dedicated resources</p>
+<p>Fairness and security.</p>
+<h3 id="10-project-design-a-chat-system"><a href="../level-3/10-project-chat-system/">10 · Project — Design a Chat System</a><a class="headerlink" href="#10-project-design-a-chat-system" title="Permanent link">&para;</a></h3>
+<p><strong>Q117.</strong> What storage and flow does a chat system need for message history?</p>
+<p><strong>Answer:</strong> A durable, ordered store partitioned by conversation plus a push channel for live delivery</p>
+<p>Cassandra-style stores fit well.</p>
+<p><strong>Q118.</strong> How do you order messages in a conversation?</p>
+<p><strong>Answer:</strong> A per-conversation sequence number assigned by the server</p>
+<p>Clocks disagree.</p>
+<p><strong>Q119.</strong> How do offline users get messages?</p>
+<p><strong>Answer:</strong> From stored history on reconnect, with push notifications as a nudge</p>
+<p>Track delivery and read receipts.</p>
+<p><strong>Q120.</strong> 1 million active users send 40 messages/day each of 200 bytes. How many GB per day of raw message data? (10^9)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">1_000_000</span><span class="o">*</span><span class="mi">40</span><span class="o">*</span><span class="mi">200</span><span class="o">/</span><span class="mf">1e9</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 8.0</p>
+<p>Plus metadata and replication. Verified by running it.</p>
+<h2 id="level-4-master">Level 4 · Master<a class="headerlink" href="#level-4-master" title="Permanent link">&para;</a></h2>
+<h3 id="01-case-study-video-streaming"><a href="../level-4/01-case-video-streaming/">01 · Case Study: Video Streaming</a><a class="headerlink" href="#01-case-study-video-streaming" title="Permanent link">&para;</a></h3>
+<p><strong>Q121.</strong> What does a video streaming pipeline do before delivery?</p>
+<p><strong>Answer:</strong> Transcodes into multiple bitrates and segments for adaptive streaming</p>
+<p>HLS and DASH.</p>
+<p><strong>Q122.</strong> What is adaptive bitrate streaming?</p>
+<p><strong>Answer:</strong> The player switches quality per segment based on bandwidth</p>
+<p>Smooth playback.</p>
+<p><strong>Q123.</strong> Why does a CDN matter most for video?</p>
+<p><strong>Answer:</strong> Bandwidth is huge and latency-sensitive; edges serve the bulk of traffic</p>
+<p>Reduces origin cost.</p>
+<p><strong>Q124.</strong> What is the biggest cost driver of a streaming service?</p>
+<p><strong>Answer:</strong> Egress bandwidth and storage, so efficiency and peering matter</p>
+<p>Optimise encoding.</p>
+<h3 id="02-case-study-ride-hailing-dispatch"><a href="../level-4/02-case-ride-hailing/">02 · Case Study: Ride-Hailing Dispatch</a><a class="headerlink" href="#02-case-study-ride-hailing-dispatch" title="Permanent link">&para;</a></h3>
+<p><strong>Q125.</strong> What does geospatial indexing (geohash, quadtree, S2) do?</p>
+<p><strong>Answer:</strong> Maps locations to cells so nearby searches are efficient</p>
+<p>Find drivers near a rider.</p>
+<p><strong>Q126.</strong> How are driver locations updated at scale?</p>
+<p><strong>Answer:</strong> Frequent lightweight updates into an in-memory geo store, with short TTLs</p>
+<p>Redis GEO is common.</p>
+<p><strong>Q127.</strong> What is a trade-off in matching riders and drivers?</p>
+<p><strong>Answer:</strong> Optimal global matching versus fast local greedy matching</p>
+<p>Latency matters.</p>
+<p><strong>Q128.</strong> How do you handle a surge of requests in one area?</p>
+<p><strong>Answer:</strong> Shard by region, rate limit and apply dynamic pricing as demand control</p>
+<p>Demand shaping.</p>
+<h3 id="03-case-study-distributed-file-storage"><a href="../level-4/03-case-distributed-file-storage/">03 · Case Study: Distributed File Storage</a><a class="headerlink" href="#03-case-study-distributed-file-storage" title="Permanent link">&para;</a></h3>
+<p><strong>Q129.</strong> How are large files stored in a distributed file system?</p>
+<p><strong>Answer:</strong> Split into chunks replicated across nodes, with a metadata service tracking locations</p>
+<p>Like GFS/HDFS.</p>
+<p><strong>Q130.</strong> A 1 GB file in 64 MB chunks needs how many chunks? (round up, 1 GB = 1024 MB)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">1024</span><span class="o">/</span><span class="mi">64</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 16</p>
+<p>Each chunk is replicated, commonly 3 times. Verified by running it.</p>
+<p><strong>Q131.</strong> Why is the metadata service a bottleneck risk?</p>
+<p><strong>Answer:</strong> All lookups go through it, so it needs replication, caching and partitioning</p>
+<p>Keep it small and fast.</p>
+<p><strong>Q132.</strong> What is deduplication?</p>
+<p><strong>Answer:</strong> Storing identical chunks once, referenced by content hash</p>
+<p>Saves space.</p>
+<h3 id="04-case-study-payment-system"><a href="../level-4/04-case-payment-system/">04 · Case Study: Payment System</a><a class="headerlink" href="#04-case-study-payment-system" title="Permanent link">&para;</a></h3>
+<p><strong>Q133.</strong> What is the most important property of a payment system?</p>
+<p><strong>Answer:</strong> Correctness and consistency of money movement, including idempotency and auditability</p>
+<p>Never lose or double-charge.</p>
+<p><strong>Q134.</strong> Why use a double-entry ledger?</p>
+<p><strong>Answer:</strong> Every transaction records equal debits and credits, making errors detectable</p>
+<p>Immutable entries.</p>
+<p><strong>Q135.</strong> What does reconciliation do?</p>
+<p><strong>Answer:</strong> Compares internal records with external provider statements to find mismatches</p>
+<p>Run daily.</p>
+<p><strong>Q136.</strong> Why is the idempotency key essential for payment APIs?</p>
+<p><strong>Answer:</strong> Retries after timeouts must not charge twice</p>
+<p>Store key to result.</p>
+<h3 id="05-multi-region-disaster-recovery"><a href="../level-4/05-multi-region-dr/">05 · Multi-Region &amp; Disaster Recovery</a><a class="headerlink" href="#05-multi-region-disaster-recovery" title="Permanent link">&para;</a></h3>
+<p><strong>Q137.</strong> What is the difference between multi-AZ and multi-region?</p>
+<p><strong>Answer:</strong> Multi-AZ protects against a data centre failure; multi-region protects against regional failure</p>
+<p>Region adds latency and cost.</p>
+<p><strong>Q138.</strong> What are RPO and RTO?</p>
+<p><strong>Answer:</strong> Acceptable data loss and acceptable time to recover</p>
+<p>Drive the DR strategy.</p>
+<p><strong>Q139.</strong> Which DR strategy has the fastest recovery at highest cost?</p>
+<p><strong>Answer:</strong> Active-active across regions</p>
+<p>Warm standby is in between.</p>
+<p><strong>Q140.</strong> Why test failover regularly?</p>
+<p><strong>Answer:</strong> Untested recovery plans fail when needed</p>
+<p>Game days.</p>
+<h3 id="06-cost-aware-design"><a href="../level-4/06-cost-aware-design/">06 · Cost-Aware Design</a><a class="headerlink" href="#06-cost-aware-design" title="Permanent link">&para;</a></h3>
+<p><strong>Q141.</strong> A service runs 20 instances at $0.10/hour. What is the monthly cost (30 days)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="mf">0.10</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 1440.0</p>
+<p>Rightsize and use autoscaling. Verified by running it.</p>
+<p><strong>Q142.</strong> Which saves most for steady baseline load?</p>
+<p><strong>Answer:</strong> Reserved or committed-use capacity</p>
+<p>Use spot for tolerant jobs.</p>
+<p><strong>Q143.</strong> What hidden cost surprises teams?</p>
+<p><strong>Answer:</strong> Cross-AZ and egress data transfer</p>
+<p>Design for locality.</p>
+<p><strong>Q144.</strong> What is cost-aware design?</p>
+<p><strong>Answer:</strong> Making cost a design constraint and measuring it per feature or request</p>
+<p>Tag and attribute.</p>
+<h3 id="07-security-architecture"><a href="../level-4/07-security-architecture/">07 · Security Architecture</a><a class="headerlink" href="#07-security-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>Q145.</strong> What is defence in depth?</p>
+<p><strong>Answer:</strong> Layered controls so one failure does not expose everything</p>
+<p>Network, identity, data.</p>
+<p><strong>Q146.</strong> What does least privilege mean?</p>
+<p><strong>Answer:</strong> Granting only the permissions needed</p>
+<p>Scope service accounts.</p>
+<p><strong>Q147.</strong> Where do you terminate TLS?</p>
+<p><strong>Answer:</strong> At the edge and re-encrypt internally for sensitive systems (mTLS)</p>
+<p>Encrypt in transit.</p>
+<p><strong>Q148.</strong> What belongs in a threat model?</p>
+<p><strong>Answer:</strong> Assets, entry points, attackers and mitigations</p>
+<p>STRIDE is one aid.</p>
+<h3 id="08-the-interview-framework-common-mistakes"><a href="../level-4/08-interview-framework/">08 · The Interview Framework &amp; Common Mistakes</a><a class="headerlink" href="#08-the-interview-framework-common-mistakes" title="Permanent link">&para;</a></h3>
+<p><strong>Q149.</strong> What is a good order for a design interview?</p>
+<p><strong>Answer:</strong> Requirements, estimates, API and data model, high-level design, deep dives, trade-offs</p>
+<p>Show structured thinking.</p>
+<p><strong>Q150.</strong> What do interviewers look for?</p>
+<p><strong>Answer:</strong> Clarifying questions, trade-off reasoning and handling of scale and failure</p>
+<p>Justify choices.</p>
+<p><strong>Q151.</strong> What should you do when requirements are ambiguous?</p>
+<p><strong>Answer:</strong> Ask and state assumptions explicitly</p>
+<p>Narrow scope.</p>
+<p><strong>Q152.</strong> Why discuss failure modes?</p>
+<p><strong>Answer:</strong> Real systems fail; resilience is part of the design</p>
+<p>Mention monitoring.</p>
+<h3 id="09-writing-design-docs-defending-trade-offs"><a href="../level-4/09-design-reviews-tradeoffs/">09 · Writing Design Docs &amp; Defending Trade-offs</a><a class="headerlink" href="#09-writing-design-docs-defending-trade-offs" title="Permanent link">&para;</a></h3>
+<p><strong>Q153.</strong> What is an ADR?</p>
+<p><strong>Answer:</strong> An architecture decision record capturing context, decision and consequences</p>
+<p>Keep a trail.</p>
+<p><strong>Q154.</strong> How should a design review be run?</p>
+<p><strong>Answer:</strong> Share the doc early, focus on risks and trade-offs and record decisions</p>
+<p>Blameless and constructive.</p>
+<p><strong>Q155.</strong> What is a good way to compare options?</p>
+<p><strong>Answer:</strong> A table of criteria (cost, risk, complexity, fit) with weights or notes</p>
+<p>Make trade-offs visible.</p>
+<p><strong>Q156.</strong> What does reversibility mean for decisions?</p>
+<p><strong>Answer:</strong> Prefer choices that are cheap to change and take care over one-way doors</p>
+<p>Two-way vs one-way doors.</p>
+<h3 id="10-capstone-your-own-design-doc"><a href="../level-4/10-capstone-design-doc/">10 · Capstone — Your Own Design Doc</a><a class="headerlink" href="#10-capstone-your-own-design-doc" title="Permanent link">&para;</a></h3>
+<p><strong>Q157.</strong> What belongs in a design doc?</p>
+<p><strong>Answer:</strong> Context, goals and non-goals, design, alternatives, risks and rollout plan</p>
+<p>Write for reviewers.</p>
+<p><strong>Q158.</strong> Why include non-goals?</p>
+<p><strong>Answer:</strong> They limit scope and prevent misunderstandings</p>
+<p>Be explicit.</p>
+<p><strong>Q159.</strong> Why include a rollout and rollback plan?</p>
+<p><strong>Answer:</strong> Changes can fail; recovery must be planned</p>
+<p>Feature flags and canaries.</p>
+<p><strong>Q160.</strong> How do you show a design works?</p>
+<p><strong>Answer:</strong> Capacity estimates, failure analysis and a plan to measure with SLOs</p>
+<p>Evidence over assertion.</p>
+<h2 id="mixed-questions-across-all-levels">Mixed questions across all levels<a class="headerlink" href="#mixed-questions-across-all-levels" title="Permanent link">&para;</a></h2>
+<p><strong>Q161.</strong> What does this estimate print for peak QPS and daily storage?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">reqs</span><span class="o">=</span><span class="mi">200_000_000</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">avg</span><span class="o">=</span><span class="n">reqs</span><span class="o">/</span><span class="mi">86_400</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="n">peak</span><span class="o">=</span><span class="n">avg</span><span class="o">*</span><span class="mi">4</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">store_gb</span><span class="o">=</span><span class="n">reqs</span><span class="o">*</span><span class="mf">0.5</span><span class="o">/</span><span class="mf">1e6</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">avg</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">peak</span><span class="p">),</span> <span class="n">store_gb</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 2315 9259 100.0</p>
+<p>Average QPS is requests over 86,400 seconds; peak uses a multiplier; 0.5 KB per request is 100 GB per day. Verified by running it.</p>
+<p><strong>Q162.</strong> A cache with a 95% hit rate has 1 ms hits and 40 ms misses. What is the mean read time (ms)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">print</span><span class="p">(</span><span class="mf">0.95</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.05</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 2.95</p>
+<p>Hit rate dominates average latency. Verified by running it.</p>
+<p><strong>Q163.</strong> With N=5 replicas, which (W, R) pairs guarantee read-after-write overlap (R + W &gt; N)?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">N</span><span class="o">=</span><span class="mi">5</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">print</span><span class="p">([(</span><span class="n">w</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">if</span> <span class="n">r</span><span class="o">+</span><span class="n">w</span><span class="o">&gt;</span><span class="n">N</span> <span class="ow">and</span> <span class="n">w</span><span class="o">==</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div>
+<p><strong>Answer:</strong> [(3, 3), (3, 4), (3, 5)]</p>
+<p>With W=3 any R of at least 3 overlaps every write quorum. Verified by running it.</p>
+<p><strong>Q164.</strong> Hash-modulo sharding from 4 to 5 shards moves what fraction of keys 0..999?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span><span class="o">%</span><span class="mi">4</span><span class="o">!=</span><span class="n">k</span><span class="o">%</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> 0.8</p>
+<p>Modulo resharding remaps most keys; consistent hashing moves about 1/N. Verified by running it.</p>
+<p><strong>Q165.</strong> A 3-node Raft cluster has one node down. Can it still commit writes?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">nodes</span><span class="p">,</span><span class="n">down</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">nodes</span><span class="o">-</span><span class="n">down</span> <span class="o">&gt;=</span> <span class="n">nodes</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Answer:</strong> True</p>
+<p>Two of three is a majority. Verified by running it.</p>
+<p><strong>Q166.</strong> A service sees double charges after client timeouts and retries. What is the fix?</p>
+<p><strong>Answer:</strong> Require an idempotency key and return the stored result for repeated keys</p>
+<p>Retries must be safe.</p>
+<p><strong>Q167.</strong> Which pattern keeps a database write and an event publish consistent without distributed transactions?</p>
+<p><strong>Answer:</strong> The outbox: write the event in the same local transaction and publish it from there</p>
+<p>CDC or a relay publishes the outbox.</p>
+<p><strong>Q168.</strong> Why do hot keys matter in sharded caches?</p>
+<p><strong>Answer:</strong> One node absorbs disproportionate traffic and becomes a bottleneck</p>
+<p>Replicate or split the key.</p>
+<p><strong>Q169.</strong> What is the right response to a thundering herd on an expired hot key?</p>
+<p><strong>Answer:</strong> Single-flight rebuilds with jittered TTLs so only one request recomputes</p>
+<p>Protect the database.</p>
+<p><strong>Q170.</strong> When does a queue between services help most?</p>
+<p><strong>Answer:</strong> To absorb bursts and decouple speeds, accepting asynchronous results</p>
+<p>Monitor lag.</p>
+<p><strong>Q171.</strong> Why prefer cursor pagination over offset for large feeds?</p>
+<p><strong>Answer:</strong> Offsets get slow with depth and shift when rows are inserted; cursors are stable</p>
+<p>Use an indexed ordering key.</p>
+<p><strong>Q172.</strong> Which consistency does a CP system sacrifice during a partition?</p>
+<p><strong>Answer:</strong> Availability: the minority side stops accepting writes</p>
+<p>CAP.</p>
+<p><strong>Q173.</strong> What does PACELC add to CAP?</p>
+<p><strong>Answer:</strong> Even without partitions you trade latency against consistency</p>
+<p>Else-case trade-off.</p>
+<p><strong>Q174.</strong> What is the main benefit of virtual nodes in consistent hashing?</p>
+<p><strong>Answer:</strong> More even load and smoother rebalancing</p>
+<p>The challenge shows the ratio improving.</p>
+<p><strong>Q175.</strong> A sliding-window limiter stops a boundary burst that a fixed window allows. What is the cost?</p>
+<p><strong>Answer:</strong> More memory and work per client to track timestamps (or approximations)</p>
+<p>Token buckets are cheaper and allow controlled bursts.</p>
+<p><strong>Q176.</strong> How do you decide between fan-out on write and on read?</p>
+<p><strong>Answer:</strong> By follower distribution: push for typical users, pull for celebrities (hybrid)</p>
+<p>Avoid write amplification.</p>
+<p><strong>Q177.</strong> What does an SLO error budget let you do?</p>
+<p><strong>Answer:</strong> Trade reliability against change velocity with an explicit allowance for failures</p>
+<p>Spend it deliberately.</p>
+<p><strong>Q178.</strong> Which belongs in every design doc besides the design itself?</p>
+<p><strong>Answer:</strong> Goals and non-goals, alternatives considered, risks and a rollout/rollback plan</p>
+<p>Make decisions reviewable.</p>
+<p><strong>Q179.</strong> What is the weakest justification for a technology choice in a design review?</p>
+<p><strong>Answer:</strong> It is popular or what we already know without evidence it fits the requirements</p>
+<p>Tie choices to requirements.</p>
+<h2 id="practical-coding-questions">Practical coding questions<a class="headerlink" href="#practical-coding-questions" title="Permanent link">&para;</a></h2>
+<h3 id="a-consistent-hash-ring-with-virtual-nodes">A consistent-hash ring with virtual nodes<a class="headerlink" href="#a-consistent-hash-ring-with-virtual-nodes" title="Permanent link">&para;</a></h3>
+<p>Implement a consistent-hashing ring (bisect over sorted virtual-node points) and use it to show how load balance improves with more virtual nodes, that adding a node moves only about 1/N of the keys (all to the new node) and that removing a node leaves nothing behind. This is a self-contained Python model of the idea used by distributed caches and Dynamo-style stores.</p>
+<p>Starter code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>import bisect, hashlib
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>def h(s):
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    return int(hashlib.md5(s.encode()).hexdigest(), 16)
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a># TODO: class Ring(nodes=(), vnodes=100)
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>#   add(node) / remove(node): place `vnodes` points per node at h(f"{node}#{i}") on a sorted list (use bisect.insort), remember each point's owner
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>#   lookup(key): the owner of the first point clockwise from h(key) (wrap around with % len)
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>keys = [f"user:{i}" for i in range(10_000)]
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>def spread(ring):
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>    counts = {}
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>    for k in keys:
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>        n = ring.lookup(k)
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>        counts[n] = counts.get(n, 0) + 1
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>    return counts
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>ring = Ring(["a", "b", "c", "d"])
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>before = {k: ring.lookup(k) for k in keys}
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>c = spread(ring)
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>print("spread:", {n: c[n] for n in sorted(c)})
+<a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>for vn in (5, 100, 2000):
+<a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a>    cc = spread(Ring(["a", "b", "c", "d"], vnodes=vn))
+<a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>    print(f"vnodes={vn:4} max/min load ratio = {max(cc.values()) / min(cc.values()):.2f}")
+<a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a>
+<a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a>ring.add("e")
+<a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a>moved = sum(1 for k in keys if ring.lookup(k) != before[k])
+<a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a>print("moved after adding e:", round(100 * moved / len(keys)), "% (ideal 20%)")
+<a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a>only_to_new = all(ring.lookup(k) == "e" for k in keys if ring.lookup(k) != before[k])
+<a id="__codelineno-29-31" name="__codelineno-29-31" href="#__codelineno-29-31"></a>print("every moved key went to the new node:", only_to_new)
+<a id="__codelineno-29-32" name="__codelineno-29-32" href="#__codelineno-29-32"></a>
+<a id="__codelineno-29-33" name="__codelineno-29-33" href="#__codelineno-29-33"></a>modulo_moved = sum(1 for k in keys if h(k) % 4 != h(k) % 5)
+<a id="__codelineno-29-34" name="__codelineno-29-34" href="#__codelineno-29-34"></a>print("modulo hashing 4-&gt;5 would move:", round(100 * modulo_moved / len(keys)), "%")
+<a id="__codelineno-29-35" name="__codelineno-29-35" href="#__codelineno-29-35"></a>
+<a id="__codelineno-29-36" name="__codelineno-29-36" href="#__codelineno-29-36"></a>ring.remove("b")
+<a id="__codelineno-29-37" name="__codelineno-29-37" href="#__codelineno-29-37"></a>after_remove = {k: ring.lookup(k) for k in keys}
+<a id="__codelineno-29-38" name="__codelineno-29-38" href="#__codelineno-29-38"></a>print("keys left on removed node:", sum(1 for v in after_remove.values() if v == "b"))
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>spread: {'a': 2207, 'b': 2911, 'c': 2726, 'd': 2156}
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>vnodes=   5 max/min load ratio = 2.74
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>vnodes= 100 max/min load ratio = 1.35
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>vnodes=2000 max/min load ratio = 1.09
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>moved after adding e: 21 % (ideal 20%)
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>every moved key went to the new node: True
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>modulo hashing 4-&gt;5 would move: 80 %
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>keys left on removed node: 0
+</code></pre></div>
+<p>??? success "Show a solution"</p>
+<div class="highlight"><pre><span></span><code>```
+import bisect, hashlib
+
+def h(s):
+    return int(hashlib.md5(s.encode()).hexdigest(), 16)
+
+class Ring:
+    def __init__(self, nodes=(), vnodes=100):
+        self.vnodes, self.keys, self.owner = vnodes, [], {}
+        for n in nodes:
+            self.add(n)
+
+    def add(self, node):
+        for i in range(self.vnodes):
+            p = h(f"{node}#{i}")
+            bisect.insort(self.keys, p)
+            self.owner[p] = node
+
+    def remove(self, node):
+        for i in range(self.vnodes):
+            p = h(f"{node}#{i}")
+            self.keys.remove(p)
+            del self.owner[p]
+
+    def lookup(self, key):
+        i = bisect.bisect(self.keys, h(key)) % len(self.keys)
+        return self.owner[self.keys[i]]
+
+keys = [f"user:{i}" for i in range(10_000)]
+
+def spread(ring):
+    counts = {}
+    for k in keys:
+        n = ring.lookup(k)
+        counts[n] = counts.get(n, 0) + 1
+    return counts
+
+ring = Ring(["a", "b", "c", "d"])
+before = {k: ring.lookup(k) for k in keys}
+c = spread(ring)
+print("spread:", {n: c[n] for n in sorted(c)})
+for vn in (5, 100, 2000):
+    cc = spread(Ring(["a", "b", "c", "d"], vnodes=vn))
+    print(f"vnodes={vn:4} max/min load ratio = {max(cc.values()) / min(cc.values()):.2f}")
+
+ring.add("e")
+moved = sum(1 for k in keys if ring.lookup(k) != before[k])
+print("moved after adding e:", round(100 * moved / len(keys)), "% (ideal 20%)")
+only_to_new = all(ring.lookup(k) == "e" for k in keys if ring.lookup(k) != before[k])
+print("every moved key went to the new node:", only_to_new)
+
+modulo_moved = sum(1 for k in keys if h(k) % 4 != h(k) % 5)
+print("modulo hashing 4-&gt;5 would move:", round(100 * modulo_moved / len(keys)), "%")
+
+ring.remove("b")
+after_remove = {k: ring.lookup(k) for k in keys}
+print("keys left on removed node:", sum(1 for v in after_remove.values() if v == "b"))
+```
+
+Each node owns many points on the ring; a key belongs to the first point clockwise from its hash. Adding a node only takes keys from neighbours, unlike modulo hashing which remaps about 80% of keys when going from 4 to 5 nodes. More virtual nodes smooth the load. Verified by running the solution (MD5 is deterministic, so the numbers are reproducible).
+</code></pre></div>
+<h3 id="rate-limiters-compared-on-a-boundary-burst">Rate limiters compared on a boundary burst<a class="headerlink" href="#rate-limiters-compared-on-a-boundary-burst" title="Permanent link">&para;</a></h3>
+<p>Implement fixed-window, sliding-window and token-bucket limiters with an explicit clock argument and compare them on a burst straddling a window boundary and on steady and heavy clients. This is a deterministic simulation, not a distributed limiter; production versions keep the counters in a shared store such as Redis.</p>
+<p>Starter code:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a># TODO: FixedWindow(limit, window).allow(t)   counter that resets at each window boundary (start = t - t % window)
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a># TODO: TokenBucket(capacity, rate).allow(t)   refill (t - last) * rate tokens up to capacity, spend 1 per request
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a># TODO: SlidingWindow(limit, window).allow(t)  keep timestamps newer than t - window; allow if fewer than limit
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a># 10 requests per second allowed; a burst of 10 just before a window boundary and 10 right after
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>burst = [0.90 + i * 0.005 for i in range(10)] + [1.00 + i * 0.005 for i in range(10)]
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>for name, lim in [("fixed window", FixedWindow(10, 1.0)), ("sliding window", SlidingWindow(10, 1.0)), ("token bucket", TokenBucket(10, 10.0))]:
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>    ok = sum(lim.allow(t) for t in burst)
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>    print(f"{name:15} allowed {ok} of {len(burst)}")
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a># steady 5 req/s for 4 seconds is fine for everyone; a client hammering 50 req/s is limited
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>steady = [i * 0.2 for i in range(20)]
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>heavy = [i * 0.02 for i in range(200)]
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>for name, make in [("fixed window", lambda: FixedWindow(10, 1.0)), ("token bucket", lambda: TokenBucket(10, 10.0))]:
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>    print(f"{name:15} steady {sum(make().allow(t) for t in steady)}/20  heavy {sum((lambda l: [l.allow(t) for t in heavy])(make()))}/200")
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>fixed window    allowed 20 of 20
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>sliding window  allowed 10 of 20
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>token bucket    allowed 11 of 20
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>fixed window    steady 20/20  heavy 40/200
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>token bucket    steady 20/20  heavy 49/200
+</code></pre></div>
+<p>??? success "Show a solution"</p>
+<div class="highlight"><pre><span></span><code>```
+class FixedWindow:
+    def __init__(self, limit, window):
+        self.limit, self.window, self.start, self.count = limit, window, 0, 0
+
+    def allow(self, t):
+        if t - self.start &gt;= self.window:
+            self.start, self.count = t - (t % self.window), 0
+        if self.count &lt; self.limit:
+            self.count += 1
+            return True
+        return False
+
+class TokenBucket:
+    def __init__(self, capacity, rate):
+        self.capacity, self.rate, self.tokens, self.last = capacity, rate, capacity, 0.0
+
+    def allow(self, t):
+        self.tokens = min(self.capacity, self.tokens + (t - self.last) * self.rate)
+        self.last = t
+        if self.tokens &gt;= 1:
+            self.tokens -= 1
+            return True
+        return False
+
+class SlidingWindow:
+    def __init__(self, limit, window):
+        self.limit, self.window, self.hits = limit, window, []
+
+    def allow(self, t):
+        self.hits = [x for x in self.hits if t - x &lt; self.window]
+        if len(self.hits) &lt; self.limit:
+            self.hits.append(t)
+            return True
+        return False
+
+# 10 requests per second allowed; a burst of 10 just before a window boundary and 10 right after
+burst = [0.90 + i * 0.005 for i in range(10)] + [1.00 + i * 0.005 for i in range(10)]
+for name, lim in [("fixed window", FixedWindow(10, 1.0)), ("sliding window", SlidingWindow(10, 1.0)), ("token bucket", TokenBucket(10, 10.0))]:
+    ok = sum(lim.allow(t) for t in burst)
+    print(f"{name:15} allowed {ok} of {len(burst)}")
+
+# steady 5 req/s for 4 seconds is fine for everyone; a client hammering 50 req/s is limited
+steady = [i * 0.2 for i in range(20)]
+heavy = [i * 0.02 for i in range(200)]
+for name, make in [("fixed window", lambda: FixedWindow(10, 1.0)), ("token bucket", lambda: TokenBucket(10, 10.0))]:
+    print(f"{name:15} steady {sum(make().allow(t) for t in steady)}/20  heavy {sum((lambda l: [l.allow(t) for t in heavy])(make()))}/200")
+```
+
+The fixed window lets 20 requests through in 0.1 seconds because the counter resets at the boundary, the sliding window enforces the true rate, and the token bucket allows a controlled burst (11 here: the full bucket plus a little refill). Verified by running the solution.
+</code></pre></div>
+<hr />
+<p>More free practice: the <a href="../">System Design Mastery Path</a> curriculum, the <a href="https://learnmasterypath.com/interview-pack/">Interview Prep Pack</a> and the <a href="https://learnmasterypath.com/resume/">free resume ATS check</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+  <nav class="mp-related" aria-label="Related free courses">
+    <h2>Related free courses</h2>
+    <ul>
+      <li><a href="https://learnmasterypath.com/dsa-interview-mastery-path/">DSA & Coding Interviews</a></li>
+      <li><a href="https://learnmasterypath.com/">All 100+ courses &rarr;</a></li>
+    </ul>
+  </nav>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cheat-sheet/" class="md-footer__link md-footer__link--next" aria-label="Next: Cheat Sheet">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Cheat Sheet
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <div class="mp-foot">
+    <div class="mp-foot-inner">
+      <a class="mp-foot-brand" href="https://learnmasterypath.com/"><svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg><span>Mastery Path</span></a>
+      <nav class="mp-sitelinks" aria-label="Site and legal links">
+        <a href="https://learnmasterypath.com/">All courses</a>
+        <a href="https://learnmasterypath.com/about.html">About</a>
+        <a href="https://learnmasterypath.com/contact.html">Contact</a>
+        <a href="https://learnmasterypath.com/system-design-mastery-path/privacy/">Privacy Policy</a>
+        <a href="https://learnmasterypath.com/terms.html">Terms</a>
+        <a href="https://learnmasterypath.com/system-design-mastery-path/license/">License</a>
+        <a href="https://learnmasterypath.com/verify/">Verify a certificate</a>
+      </nav>
+    </div>
+    <p class="mp-license-note">
+      © 2026 Vinod Kumar Sigilipelli · Except where otherwise noted, lesson content is licensed under
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and code examples under the
+      <a href="https://opensource.org/license/mit">MIT License</a>.
+    </p>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/progress-tracker.js"></script>
+      
+        <script src="../javascripts/final-quiz.js"></script>
+      
+    
+  </body>
+</html>
