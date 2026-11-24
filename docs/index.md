@@ -1,6 +1,6 @@
 ---
 title: "Free System Design Course: Distributed Systems, Scaling & Interview Prep"
-description: "Free system design course — 36 lessons and 4 projects on caching, replication, sharding, consensus, queues, and full design exercises for engineers and interview candidates."
+description: "Free system design course — 36 lessons, 3 projects and 1 capstone on caching, replication, sharding, consensus, queues, and full design exercises for engineers and interview candidates."
 ---
 
 # System Design Mastery Path
